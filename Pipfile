@@ -1,1 +1,13 @@
-python_version == "3.9"
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+ 
+[packages]
+fastapi=0.100.1
+uvicorn[standard]=0.23.2
+SQLAlchemy=2.0.29
+psycopg2-binary=2.9.9
+ 
+[requires]
+python_version = "3.9"
