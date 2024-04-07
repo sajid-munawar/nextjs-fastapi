@@ -1,4 +1,5 @@
 import AddTodo from "./components/AddTodo";
+import DeleteTodo from "./components/DeleteTodo";
 
 export default async function Home() {
   const result = await fetch(
@@ -13,7 +14,10 @@ export default async function Home() {
   return (
     <div>
       {data.todos.map((todo: any) => (
-        <div key={todo.id}>{todo.title}</div>
+        <div key={todo.id} className="flex gap-2">
+          {todo.title}
+          <DeleteTodo id={todo.id} />
+        </div>
       ))}
       {/* {data.message} */}
       <AddTodo />
