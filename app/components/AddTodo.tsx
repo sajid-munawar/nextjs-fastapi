@@ -1,9 +1,10 @@
 "use client";
-
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const AddTodo = () => {
   const [title, setTitle] = useState("");
+  const { refresh } = useRouter();
 
   const addTodo = async (e: any) => {
     e.preventDefault();
@@ -18,6 +19,12 @@ const AddTodo = () => {
         },
       }
     );
+    if (result.ok) {
+      refresh();
+      setTitle("");
+    }
+
+    // revalidatePath("/");
     const data = await result.json();
     console.log("data", data);
   };
@@ -26,6 +33,7 @@ const AddTodo = () => {
     <div>
       <form>
         <input
+          value={title}
           className="border"
           type="text"
           onChange={(e) => setTitle(e.target.value)}
