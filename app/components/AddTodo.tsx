@@ -8,7 +8,7 @@ const AddTodo = () => {
   const addTodo = async (e: any) => {
     e.preventDefault();
     const result = await fetch(
-      "http://localhost:3000/api/todos?title=" + title + "",
+      "https://nextjs-fastapi-tawny.vercel.app/api/todos?title=" + title + "",
       {
         method: "POST",
         // body: JSON.stringify({ title }),

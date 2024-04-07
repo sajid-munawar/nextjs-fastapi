@@ -1,7 +1,7 @@
 import AddTodo from "./components/AddTodo";
 
 export default async function Home() {
-  const result = await fetch("http://localhost:3000/api/todos/", {
+  const result = await fetch("https://nextjs-fastapi-tawny.vercel.app/api/todos/", {
     cache: "no-store",
   });
   const data = await result.json();

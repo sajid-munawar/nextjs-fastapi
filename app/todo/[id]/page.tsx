@@ -4,7 +4,7 @@ const page = async ({ params, searchParams }: any) => {
   console.log(searchParams);
   const id = params.id;
   const result = await fetch(
-    `http://localhost:3000/api/todo/${id}?name=${searchParams.name}`,
+    `https://nextjs-fastapi-tawny.vercel.app/api/todo/${id}?name=${searchParams.name}`,
     {
       cache: "no-store",
     }
