@@ -1,5 +1,4 @@
 import AddTodo from "./components/AddTodo";
-import DeleteTodo from "./components/DeleteTodo";
 import ItemsList from "./components/ItemsList";
 
 export default async function Home() {

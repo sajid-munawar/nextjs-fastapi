@@ -2,7 +2,9 @@
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 // import { ToastContainer, toast } from "react-toastify";
+
 // import "react-toastify/dist/ReactToastify.css";
 
 const AddTodo = () => {
@@ -27,6 +29,7 @@ const AddTodo = () => {
           if (res.ok) {
             (inputRef.current as HTMLInputElement).value = "";
             // toast.success("Task added successfully");
+            toast.success("Task added successfully");
             refresh();
             setTask("");
             setLoading(false);

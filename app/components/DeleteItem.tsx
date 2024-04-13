@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 // import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 
@@ -21,6 +22,7 @@ const DeleteItem = ({ id }: { id: number }) => {
         if (res.ok) {
           refresh();
           // toast.success("Task deleted successfully");
+          toast.warning("Task deleted successfully");
         } else {
           console.error("Error:", res.status, res.statusText);
         }
